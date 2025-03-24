@@ -1,0 +1,187 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/SFMono-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 225 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 25% 20%;
+
+    --primary: 260 70% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 40% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 25% 95%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 260 70% 95%;
+    --accent-foreground: 260 80% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 260 70% 40%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+  
+  ::selection {
+    @apply bg-primary/20;
+  }
+}
+
+@layer components {
+  .button-hover-effect {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .button-hover-effect:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease;
+  }
+
+  .button-hover-effect:hover:after {
+    width: 120%;
+  }
+  
+  .glassmorphism {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-sm;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.bg-grid {
+  background-size: 100px 100px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+.mask-radial-faded {
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.hero-blur-circle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(138, 43, 226, 0.15);
+  filter: blur(90px);
+  z-index: -1;
+}
+
+.scrolling-section {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card-hover-effect {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.animate-in {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delayed-100 {
+  animation-delay: 100ms;
+}
+
+.delayed-200 {
+  animation-delay: 200ms;
+}
+
+.delayed-300 {
+  animation-delay: 300ms;
+}
+
+.delayed-400 {
+  animation-delay: 400ms;
+}
+
+.delayed-500 {
+  animation-delay: 500ms;
+}
