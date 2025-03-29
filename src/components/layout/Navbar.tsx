@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "/img/corlate-logo-two.png";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <NavLink to="/" className="flex items-center">
           <img 
-            src="/src/img/corlate-logo-two.png" 
+            src={logo}  
             alt="Corlate Technologies" 
             className="h-10 w-40 md:h-20 md:w-52 object-cover"
           />
