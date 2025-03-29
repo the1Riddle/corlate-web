@@ -156,10 +156,10 @@ const CaseStudies = () => {
                     <p className="text-muted-foreground mb-4 flex-grow">
                       {item.description}
                     </p>
-                    <span className="inline-flex items-center text-primary font-medium group-hover:underline mt-2">
+                    {/*<span className="inline-flex items-center text-primary font-medium group-hover:underline mt-2">
                       View Case Study
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
+                    </span>*/}
                   </div>
                 </Link>
               ))}

@@ -176,7 +176,7 @@ export function Contact() {
                     <h4 className="font-medium mb-1">Call Us</h4>
                     <p className="text-muted-foreground">
                       <a href="tel:+15551234567" className="hover:text-primary transition-colors">
-                        +1 (555) 123-4567
+                      +27 (696) 030-501
                       </a>
                     </p>
                   </div>
@@ -188,7 +188,7 @@ export function Contact() {
                     <h4 className="font-medium mb-1">Email Us</h4>
                     <p className="text-muted-foreground">
                       <a href="mailto:info@corlate.com" className="hover:text-primary transition-colors">
-                        info@corlate.com
+                        info@corlate.co.za
                       </a>
                     </p>
                   </div>

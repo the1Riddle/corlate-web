@@ -128,7 +128,7 @@ const About = () => {
         </section>
         
         {/* Our Team */}
-        <section className="py-20 px-6 md:px-10 bg-white">
+        {/*<section className="py-20 px-6 md:px-10 bg-white">
           <div className="max-w-7xl mx-auto">
             <SectionTitle 
               eyebrow="Our Team" 
@@ -137,7 +137,7 @@ const About = () => {
               align="center"
             />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+            {/*<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
               {teamMembers.map((member, index) => (
                 <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all hover:shadow-md">
                   <img 
@@ -155,7 +155,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section>*/}
         
         {/* CTA Section */}
         <section className="py-20 px-6 md:px-10 bg-primary/5">

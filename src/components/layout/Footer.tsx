@@ -29,7 +29,7 @@ export function Footer() {
         
         {/* Quick Links */}
         <div>
-          <h3 className="text-base font-medium mb-4">Quick Links</h3>
+          <h3 className="text-base font-medium mb-4 text-color:white">Quick Links</h3>
           <ul className="space-y-3">
             <FooterLink href="/">Home</FooterLink>
             <FooterLink href="/services">Services</FooterLink>
@@ -58,19 +58,19 @@ export function Footer() {
             <li className="flex items-start">
               <MapPin className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
               <span className="text-sm text-muted-foreground">
-                123 Innovation Street, Tech City, TC 10111
+                35 Popular Road, Primrose, Germiston
               </span>
             </li>
             <li className="flex items-center">
               <Phone className="h-5 w-5 text-primary mr-3 shrink-0" />
               <a href="tel:+15551234567" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                +1 (555) 123-4567
+                +27 (696) 030-501
               </a>
             </li>
             <li className="flex items-center">
               <Mail className="h-5 w-5 text-primary mr-3 shrink-0" />
               <a href="mailto:info@corlate.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                info@corlate.com
+                info@corlate.co.za
               </a>
             </li>
           </ul>
