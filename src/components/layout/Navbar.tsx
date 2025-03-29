@@ -32,7 +32,7 @@ export function Navbar() {
         <NavLink to="/" className="flex items-center">
           <img 
             src="/src/img/corlate-logo-two.png" 
-            alt="Corlate Consultants" 
+            alt="Corlate Technologies" 
             className="h-10 w-40 md:h-20 md:w-52 object-cover"
           />
         </NavLink>
