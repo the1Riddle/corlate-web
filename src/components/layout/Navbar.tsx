@@ -31,8 +31,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <NavLink to="/" className="flex items-center">
           <img 
-            src="img/corlate-logo-two.png" 
-            alt="Corlate Consultants" 
+            src="/src/img/corlate-logo-two.png" 
+            alt="Corlate Technologies" 
             className="h-10 w-40 md:h-20 md:w-52 object-cover"
           />
         </NavLink>
