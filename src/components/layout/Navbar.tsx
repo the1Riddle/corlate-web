@@ -56,7 +56,7 @@ export function Navbar() {
             className={({ isActive }) =>
               cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-white"
+                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-purple"
               )
             }
           >
@@ -67,7 +67,7 @@ export function Navbar() {
             className={({ isActive }) =>
               cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-white"
+                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-purple"
               )
             }
           >
@@ -78,7 +78,7 @@ export function Navbar() {
             className={({ isActive }) =>
               cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-white"
+                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-purple"
               )
             }
           >
