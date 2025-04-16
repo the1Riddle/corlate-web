@@ -1,46 +1,52 @@
-
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useRef } from "react";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export function Contact() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormState((prev) => ({ ...prev, [name]: value }));
-  };
-  
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const scriptURL = process.env.WEB_APP || "send-link";
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormState({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
+
+    const form = formRef.current; // Get the form element
+    if (!form) return;
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new FormData(form),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log('Success!', response);
+          alert("Form submitted successfully!");
+          setIsSubmitted(true);
+          form.reset();
+        } else {
+          throw new Error('Failed to submit the form');
+        }
+      })
+      .catch((error) => {
+        console.error('Error!', error.message);
+        alert("There was an error submitting the form.");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
       });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1000);
   };
-  
+
   return (
     <section className="py-20 px-6 md:px-10 bg-primary/5">
       <div className="max-w-7xl mx-auto">
