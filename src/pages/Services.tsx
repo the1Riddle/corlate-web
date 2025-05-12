@@ -19,7 +19,7 @@ const services = [
       "Content Strategy Development",
       "Performance Analytics & Reporting"
     ],
-    link: "/services/digital-marketing"
+    link: "/partner"
   },
   {
     id: "web-development",
