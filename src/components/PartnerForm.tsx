@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import FormSection from "./FormSection";
 
-const scriptURL = "https://formsubmit.io/send/glinteastnetmarketing@gmail.com"; // Replace with your actual URL
+const scriptURL = "https://script.google.com/macros/s/AKfycbws72umkI-_-s8_0dC_FAcvMDlwEUaCQDolXJaPKZ81EbRyVh2-Ft_rK0MnDViljdlW5A/exec"; // Replace with your actual URL
 
 const PartnerForm = () => {
   const { toast } = useToast();
@@ -138,7 +138,7 @@ const PartnerForm = () => {
               There was an error submitting your application. Please try again or click the link bellow to download the offline form.
               <br />
               <a
-                href="/src/lib/MONEY%20MARKET%20.pdf"
+                href="/img/MONEY_MARKET.pdf"
                 download
                 className="text-blue-500 underline"
               >
