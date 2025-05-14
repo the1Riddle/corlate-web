@@ -7,7 +7,7 @@ export function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbws72umkI-_-s8_0dC_FAcvMDlwEUaCQDolXJaPKZ81EbRyVh2-Ft_rK0MnDViljdlW5A/exec";
+  const scriptURL = "https://script.google.com/macros/s/AKfycbw1_chj_y8cKR_xyDRvBusfzaxMb9qJGLX4lLPHlG5HJI0ECKC9IUf3u7mIuTuFCrGTpQ/exec";//"https://script.google.com/macros/s/AKfycbws72umkI-_-s8_0dC_FAcvMDlwEUaCQDolXJaPKZ81EbRyVh2-Ft_rK0MnDViljdlW5A/exec";
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
