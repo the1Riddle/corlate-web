@@ -163,6 +163,15 @@ const PartnerForm = () => {
     >
       <Card className="shadow-lg border-0">
         <div className="p-6">
+          <div className="mb-4 text-right">
+            <a
+              href="/img/MONEY_MARKET.pdf"
+              download
+              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              Download Offline Form
+            </a>
+          </div>
           {/* Personal Information */}
           <FormSection title="Personal Information">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -221,7 +230,7 @@ const PartnerForm = () => {
             </div>
           </FormSection>
           
-          {/* Gender */}
+          {/* Gendergit */}
           <FormSection title="Gender">
             <div className="mb-4">
               <RadioGroup 
