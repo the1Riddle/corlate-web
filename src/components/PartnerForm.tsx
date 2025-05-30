@@ -403,7 +403,7 @@ const PartnerForm = () => {
                   checked={formData.termsOfApplication.monthlyInterest}
                   onCheckedChange={(checked) => updateNestedFormData("termsOfApplication", "monthlyInterest", checked)}
                 />
-                <Label htmlFor="monthlyInterest">Monthly Interest 10%</Label>
+                <Label htmlFor="monthlyInterest">Monthly Interest 7%</Label>
               </div>
             </div>
           </FormSection>
