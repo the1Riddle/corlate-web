@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -159,17 +158,17 @@ const ServiceDetail = () => {
   // If service not found, display a message
   if (!serviceData) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-background">
         <Navbar />
         <main className="py-32 px-6 md:px-10">
-          <div className="max-w-7xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl font-bold mb-4">Service Not Found</h1>
             <p className="text-muted-foreground mb-8">
               Sorry, the requested service information is not available.
             </p>
             <Link
               to="/services"
-              className="button-hover-effect inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Back to Services
             </Link>
@@ -181,116 +180,121 @@ const ServiceDetail = () => {
   }
   
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navbar />
-      <main>
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-16 md:pb-24 px-6 md:px-10 bg-primary/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="animate-fade-in">
-                <div className="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider uppercase rounded-full bg-primary/10 text-primary">
-                  Our Services
-                </div>
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                  {serviceData.title}
-                </h1>
-                <p className="text-xl text-muted-foreground mb-8">
-                  {serviceData.description}
-                </p>
-                <Link
-                  to="/contact"
-                  className="button-hover-effect inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2"
-                >
-                  Get a Free Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 px-6 md:px-10 bg-gradient-to-br from-primary/5 to-background">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase rounded-full bg-primary/10 text-primary">
+                Our Services
               </div>
-              <div className="relative animate-fade-in delayed-200">
-                <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-lg">
-                  <img 
-                    src={serviceData.image} 
-                    alt={serviceData.title} 
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute inset-0 bg-primary/10"></div>
-                </div>
-              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+                {serviceData.title}
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                {serviceData.description}
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                Get a Free Consultation
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+            <div className="relative">
+              <img 
+                src={serviceData.image} 
+                alt={serviceData.title} 
+                className="w-full h-[400px] object-cover rounded-xl shadow-lg"
+              />
             </div>
           </div>
-        </section>
-        
-        {/* Main Content */}
-        <section className="py-16 px-6 md:px-10">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl font-bold mb-6">Overview</h2>
-                <p className="text-muted-foreground mb-8">
+        </div>
+      </section>
+      
+      {/* Main Content */}
+      <section className="py-16 px-6 md:px-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2 space-y-12">
+              {/* Overview */}
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-foreground">Overview</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   {serviceData.content}
                 </p>
-                
-                <h2 className="text-2xl font-bold mb-6">Our Process</h2>
-                <div className="space-y-6 mb-12">
+              </div>
+              
+              {/* Process */}
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-foreground">Our Process</h2>
+                <div className="space-y-4">
                   {serviceData.process.map((step, index) => (
-                    <div key={index} className="flex">
+                    <div key={index} className="flex items-center">
                       <div className="flex-shrink-0 mr-4">
                         <div className="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">
                           {index + 1}
                         </div>
                       </div>
-                      <div className="pt-2">
-                        <h3 className="text-lg font-medium">{step}</h3>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                
-                <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-                  {serviceData.benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-2 shrink-0 mt-0.5" />
-                      <span>{benefit}</span>
+                      <h3 className="text-lg font-medium text-foreground">{step}</h3>
                     </div>
                   ))}
                 </div>
               </div>
               
+              {/* Benefits */}
               <div>
-                <AnimatedCard className="p-8 sticky top-32">
-                  <h3 className="text-xl font-bold mb-6">Related Services</h3>
-                  <div className="space-y-4">
-                    {serviceData.relatedServices.map((relatedServiceId) => (
-                      <Link
-                        key={relatedServiceId}
-                        to={`/services/${relatedServiceId}`}
-                        className="block p-4 rounded-lg border border-gray-200 hover:border-primary/30 hover:bg-primary/5 transition-colors"
-                      >
-                        <h4 className="font-medium">{serviceNameMap[relatedServiceId]}</h4>
-                      </Link>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h3 className="text-xl font-bold mb-4">Ready to Get Started?</h3>
-                    <p className="text-muted-foreground mb-6">
-                      Contact us today for a free consultation and let us help you achieve your digital goals.
-                    </p>
-                    <Link
-                      to="/contact"
-                      className="button-hover-effect w-full inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2"
-                    >
-                      Contact Us
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </div>
-                </AnimatedCard>
+                <h2 className="text-2xl font-bold mb-6 text-foreground">Benefits</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {serviceData.benefits.map((benefit, index) => (
+                    <div key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
+                      <span className="text-foreground">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
+            
+            {/* Sidebar */}
+            <div>
+              <AnimatedCard className="p-6 sticky top-32">
+                <h3 className="text-xl font-bold mb-6 text-foreground">Related Services</h3>
+                <div className="space-y-3 mb-8">
+                  {serviceData.relatedServices.map((relatedServiceId) => (
+                    <Link
+                      key={relatedServiceId}
+                      to={`/services/${relatedServiceId}`}
+                      className="block p-4 rounded-lg border border-border hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                    >
+                      <h4 className="font-medium text-foreground">{serviceNameMap[relatedServiceId]}</h4>
+                    </Link>
+                  ))}
+                </div>
+                
+                <div className="pt-6 border-t border-border">
+                  <h3 className="text-xl font-bold mb-4 text-foreground">Ready to Get Started?</h3>
+                  <p className="text-muted-foreground mb-6">
+                    Contact us today for a free consultation and let us help you achieve your digital goals.
+                  </p>
+                  <Link
+                    to="/contact"
+                    className="w-full inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                  >
+                    Contact Us
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </AnimatedCard>
+            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+      
       <Footer />
     </div>
   );

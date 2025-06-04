@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -19,7 +18,7 @@ const services = [
       "Content Strategy Development",
       "Performance Analytics & Reporting"
     ],
-    link: "/partner"
+    link: "/services/digital-marketing"
   },
   {
     id: "web-development",
