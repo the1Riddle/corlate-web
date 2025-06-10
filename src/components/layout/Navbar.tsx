@@ -26,7 +26,7 @@ export function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-10",
         isScrolled 
           ? "py-3 bg-[#eaeaea00] backdrop-blur-md shadow-lg border-b border-secondary/50" 
-          : "py-6 bg-transparent"
+          : "py-6 bg-transparent backdrop-blur-sm"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -44,8 +44,8 @@ export function Navbar() {
             to="/"
             className={({ isActive }) =>
               cn(
-                "text-sm font-medium transition-colors hover:text-primary text-muted-foreground",
-                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-white"
+                "text-sm font-medium transition-colors hover:text-primary",
+                isActive ? "text-primary" : "text-foreground"
               )
             }
           >
@@ -56,7 +56,7 @@ export function Navbar() {
             className={({ isActive }) =>
               cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-purple"
+                isActive ? "text-primary" : "text-foreground"
               )
             }
           >
@@ -67,7 +67,7 @@ export function Navbar() {
             className={({ isActive }) =>
               cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-purple"
+                isActive ? "text-primary" : "text-foreground"
               )
             }
           >
@@ -78,7 +78,7 @@ export function Navbar() {
             className={({ isActive }) =>
               cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive ? "text-primary" : isScrolled ? "text-foreground" : "text-purple"
+                isActive ? "text-primary" : "text-foreground"
               )
             }
           >
@@ -94,7 +94,7 @@ export function Navbar() {
         
         {/* Mobile Navigation Toggle */}
         <button
-          className="md:hidden flex items-center justify-center h-10 w-10 rounded-md"
+          className="md:hidden flex items-center justify-center h-10 w-10 rounded-md text-foreground"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -103,14 +103,14 @@ export function Navbar() {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[57px] bg-secondary/95 backdrop-blur-md z-40 animate-fade-in">
+        <div className="md:hidden fixed inset-0 top-[57px] bg-background/95 backdrop-blur-md z-40 animate-fade-in">
           <nav className="flex flex-col p-6 space-y-6">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 cn(
                   "text-lg font-medium transition-colors",
-                  isActive ? "text-primary" : "text-white"
+                  isActive ? "text-primary" : "text-foreground"
                 )
               }
               onClick={() => setIsMenuOpen(false)}
@@ -122,7 +122,7 @@ export function Navbar() {
               className={({ isActive }) =>
                 cn(
                   "text-lg font-medium transition-colors",
-                  isActive ? "text-primary" : "text-white"
+                  isActive ? "text-primary" : "text-foreground"
                 )
               }
               onClick={() => setIsMenuOpen(false)}
@@ -134,7 +134,7 @@ export function Navbar() {
               className={({ isActive }) =>
                 cn(
                   "text-lg font-medium transition-colors",
-                  isActive ? "text-primary" : "text-white"
+                  isActive ? "text-primary" : "text-foreground"
                 )
               }
               onClick={() => setIsMenuOpen(false)}
@@ -146,7 +146,7 @@ export function Navbar() {
               className={({ isActive }) =>
                 cn(
                   "text-lg font-medium transition-colors",
-                  isActive ? "text-primary" : "text-white"
+                  isActive ? "text-primary" : "text-foreground"
                 )
               }
               onClick={() => setIsMenuOpen(false)}
